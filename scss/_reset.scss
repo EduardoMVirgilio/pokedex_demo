@@ -1,6 +1,9 @@
 
 :root{
     --negro: rgb(40, 40, 40);
+    --blanco: rgb(236, 236, 236);
+    --rojo-oscuro: rgb(220, 44, 0);
+    --rojo:rgb(248, 56, 0);
     --tipo-principal: Helvetica, Arial, sans-serif;
     --tipo-secundaria: Verdana;
 }
@@ -8,6 +11,7 @@
 @media (prefers-color-scheme: dark) {
     :root{
         --negro: rgb(236, 236, 236);
+        --blanco:rgb(40,40,40);
     }
 }
   

@@ -1,5 +1,19 @@
 @import 'reset';
 
-#pokeball{
-    /*https://img.icons8.com/color/344/pokeball--v1.png*/
+.form{
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    height: 3em;
+    padding: .25rem;
+    background: var(--rojo);
+}
+
+.form__icon{
+    /*
+        https://img.icons8.com/color/344/pokeball--v1.png
+        https://img.icons8.com/ios/344/red-team--v1.png
+    */
 }
