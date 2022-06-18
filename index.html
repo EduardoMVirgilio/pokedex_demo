@@ -10,20 +10,20 @@
 </head>
 <body>
     <main>
-        <form action="#" method="get" id="search">
-            <label for="pokeId">Move between 1 and 600</label>
-            <input type="range" id="pokeId" name="pokeId" min="1" max="600" value="1" step="1" />
-            <button>
+        <form  class="form" action="#" method="get" id="search">
+            <label class="form__label" for="pokeId">Move between 1 and 600</label>
+            <input class="form__input" type="range" id="pokeId" name="pokeId" min="1" max="600" value="1" step="1" />
+            <button class="form__btn-submit" type="submit">
                 <span id="pokeball"></span>
             </button>
         </form>
         <section class="result">
-            <picture>
-                <img src="" alt="">
+            <picture class="result__asset">
+                <img class="result__image" src=" https://raw.githubusercontent.com/PokeAPI/sprites/068d04e360891931c8be1533a944fa28b9bae0b2/sprites/pokemon/other/dream-world/649.svg" alt="">
             </picture>
-            <h2></h2>
-            <ul>
-                <li></li>
+            <h2 class="result__name">genesect</h2>
+            <ul class="result__pallete">
+                <li class="result__color"></li>
             </ul>
         </section>
     </main>
