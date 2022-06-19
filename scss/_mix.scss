@@ -1,0 +1,21 @@
+@mixin neo( $radius , $eje ,$bgcolor,$shadow:0,$amount: 0) {
+    border-radius: $radius;
+    background-color: $bgcolor;
+    @if $shadow != 0 {
+        box-shadow:  0 0 ($eje*2) (-$eje/2) darken($shadow, $amount); 
+    }@else{
+        box-shadow:  0 0 ($eje*2) (-$eje/2) darken($bgcolor, $amount); 
+    }
+}
+@mixin flex( $dis , $direction , $corte , $just , $align ){
+    display         : $dis;
+    flex-flow       : $direction $corte;
+    justify-content : $just;
+    align-items     : $align;
+}
+
+@mixin mv( $medida : 480px ){
+    @media screen and (max-width: $medida ) {
+        @content;
+    }
+}

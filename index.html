@@ -6,26 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
     <script defer src="/js/app.js"></script>
 </head>
 <body>
-    <main>
-        <form  class="form" action="#" method="get" id="search">
+        <form  class="form" action="#" method="get" id="pokeForm">
             <label class="form__label" for="pokeId">Move between 1 and 600</label>
-            <input class="form__input" type="range" id="pokeId" name="pokeId" min="1" max="600" value="1" step="1" />
+            <input class="form__input--range" type="range" id="pokeId" name="pokeId" min="1" max="600" value="1" step="1" />
+            <output class="form__output" id="indicator">600</output>
             <button class="form__btn-submit" type="submit">
+                pokemon
                 <span class="form__icon" id="pokeball"></span>
             </button>
         </form>
         <section class="result">
             <picture class="result__asset">
-                <img class="result__image" src=" https://raw.githubusercontent.com/PokeAPI/sprites/068d04e360891931c8be1533a944fa28b9bae0b2/sprites/pokemon/other/dream-world/649.svg" alt="">
+                <img class="result__image" id="pokeImg" src=" https://raw.githubusercontent.com/PokeAPI/sprites/068d04e360891931c8be1533a944fa28b9bae0b2/sprites/pokemon/other/dream-world/649.svg" alt="">
             </picture>
-            <h2 class="result__name">genesect</h2>
-            <ul class="result__pallete">
-                <li class="result__color"></li>
-            </ul>
+            <article class="result__text">
+                <h2 class="result__name" id="pokeName">genesect</h2>
+                <ul class="result__pallete" id="pokeColors">
+                    <li class="result__color"></li>
+                </ul>
+            </article>
         </section>
-    </main>
 </body>
 </html>

@@ -1,19 +1,152 @@
-@import 'reset';
+@import 'reset','mix';
 
-.form{
-    width: 100%;
-    max-width: 1920px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    height: 3em;
-    padding: .25rem;
-    background: var(--rojo);
+body{
+    @include flex(flex,row,wrap,center,center);
+    background-color: $blanco;
+    width: 100vw;
 }
 
-.form__icon{
-    /*
-        https://img.icons8.com/color/344/pokeball--v1.png
-        https://img.icons8.com/ios/344/red-team--v1.png
-    */
+.form{
+    width: 75%;
+    max-width: 1920px;
+    font-size: 1em;
+    padding: .5em;
+    @include flex(flex,row,wrap,center,center);
+    @include  neo( .1em , 1rem ,$rojo,0,5%);
+    &__label{
+        flex-basis: 100%;
+        text-align: center;
+        margin: .5rem 0;
+        color: $blanco;
+        text-transform: uppercase;
+    }
+    &__input--range{
+         flex: 1 0 auto;
+        -webkit-appearance: none;
+        appearance: none;
+        height: 2rem;
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            border: .1rem solid $negro;
+            cursor: pointer;
+            background-color: $rojo-oscuro;
+            
+        }
+        &::-moz-range-thumb {
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            border: .1rem solid $negro;
+            cursor: pointer;
+            background-color: $rojo-oscuro;
+        }
+     }   
+    &__output{
+        background: $negro;
+        color: $blanco;
+        width: 2rem;
+        height: 2rem;
+        @include flex(flex,row,wrap,center,center);
+        border-radius: 2rem;
+        position: relative;
+        z-index: 1;
+        font-size: .75rem;
+    }
+    &__btn-submit{
+       flex-basis: 100%;
+       height: 2rem;
+       margin: .5rem 0;
+       cursor: pointer;
+       @include  neo( .2em , 1rem ,$blanco,$rojo,50%);
+       @include flex(flex,row,wrap,center,center);
+       text-transform: uppercase;
+        font-weight: bold;
+        transition: all .3s ease;
+        &:hover{
+            @include  neo( .2em , 1rem ,$rojo-oscuro,$rojo,75%);
+            color: $blanco;
+            .form__icon{
+                transform: rotateZ(360deg);
+            }
+        }
+    }
+    &__icon{
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background-color: $rojo;
+        margin: 0 .5rem;
+        box-shadow: 0 0 0 .1rem $negro;
+        position: relative;
+        overflow: hidden;
+        @include flex(flex,row,wrap,center,center);
+        transition: all .3s ease;
+        &::after{
+            content: '';
+            width: 100%;
+            height: 100%;
+            background-color: $blanco;
+            position: absolute;
+            left: 0rem;
+            top: 50%;
+            border-top: .1rem solid $negro;
+        }
+        &::before{
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: $blanco;
+            border: .2rem solid $negro;
+            border-radius: 50%;
+            position: absolute;
+            transform: scale(.25);
+            z-index: 1;
+        }
+    }
+}
+.result{
+    @include flex(flex,row,wrap,center,stretch);
+    height: 50vh;
+    margin: 2rem 0;
+    width: 100vw;
+    max-width: 1920px;
+    &__asset{
+        flex-basis: 50%;
+        @include neo( .1em , 1rem ,$blanco,0,5%);
+    }
+    &__image{
+        height: 100%;
+        width: auto;
+        max-width: none;
+    }
+    &__text{
+        flex: 1 0 auto;
+        padding: .5rem;
+        @include flex(flex,row,wrap,center,flex-start);
+    }
+    &__name{
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: $blanco;
+        text-transform: uppercase;
+        flex: 0 0 100%;
+        padding: .5rem;
+        text-align: center;
+        @include neo( .1em , 1rem ,$rojo,$blanco,5%);
+        align-self: start;
+    }
+    &__pallete{
+        flex-grow: 1;
+        @include flex(flex,row,wrap,center,center);
+        gap: 1rem;
+    }
+    &__color{
+        width: 2rem;
+        height: 2rem; 
+        @include neo( 50% , 1rem ,$rojo,$blanco,25%);
+    }
 }
