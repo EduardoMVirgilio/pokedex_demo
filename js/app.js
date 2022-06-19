@@ -14,6 +14,7 @@ const form = document.querySelector('#pokeForm');
 form.onsubmit = async function(e) {
     e.preventDefault();
     const pokeId = document.querySelector('#pokeId').value;
+    document.querySelector('#pokemon').style.display = 'none';
     try {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokeId}`);
         const data = await response.json();
@@ -38,9 +39,12 @@ form.onsubmit = async function(e) {
                 colorItem.style.backgroundColor = color;
                 document.querySelector('#pokeColors').appendChild(colorItem);
             });
+            document.querySelector('#pokemon').style.display = 'flex';
         }
 
     } catch (error) {
         console.error(error);
     }
 }
+
+document.querySelector('#pokemon').style.display = 'none';
